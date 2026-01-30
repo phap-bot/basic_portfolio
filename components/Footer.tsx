@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
   return (
     <footer id="contact" className="py-32 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">
           <div>
@@ -42,10 +42,10 @@ const Footer: React.FC = () => {
               <span className="text-lime-400 italic">KẾT NỐI</span>
             </h2>
             <p className="text-slate-400 text-lg mb-12 max-w-md leading-relaxed">
-              Bạn có dự án thú vị hay chỉ muốn trao đổi về AI? 
+              Bạn có dự án thú vị hay chỉ muốn trao đổi về AI?
               Mình luôn sẵn sàng!
             </p>
-            
+
             <div className="space-y-10">
               <div className="group cursor-pointer">
                 <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-2">My Email</h4>
@@ -63,18 +63,18 @@ const Footer: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-[10px] font-black uppercase tracking-widest ml-4 text-slate-500">Name</label>
-                  <input 
+                  <input
                     name="name" value={formData.name} onChange={handleChange}
-                    type="text" placeholder="Tên của bạn" 
+                    type="text" placeholder="Tên của bạn"
                     className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-cyan-500 transition-all text-sm"
                     required
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] font-black uppercase tracking-widest ml-4 text-slate-500">Email</label>
-                  <input 
+                  <input
                     name="email" value={formData.email} onChange={handleChange}
-                    type="email" placeholder="Email liên hệ" 
+                    type="email" placeholder="Email liên hệ"
                     className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-cyan-500 transition-all text-sm"
                     required
                   />
@@ -82,15 +82,15 @@ const Footer: React.FC = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase tracking-widest ml-4 text-slate-500">Message</label>
-                <textarea 
+                <textarea
                   name="message" value={formData.message} onChange={handleChange}
-                  rows={4} placeholder="Nội dung tin nhắn..." 
+                  rows={4} placeholder="Nội dung tin nhắn..."
                   className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-cyan-500 transition-all text-sm resize-none"
                   required
                 ></textarea>
               </div>
-              
-              <button 
+
+              <button
                 type="submit"
                 disabled={status === 'loading'}
                 className="w-full py-5 bg-white text-black font-black rounded-2xl hover:bg-cyan-400 hover:scale-[1.02] active:scale-95 transition-all shadow-xl flex items-center justify-center gap-3"
@@ -110,9 +110,9 @@ const Footer: React.FC = () => {
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-slate-600">
           <p className="text-[10px] font-black tracking-widest uppercase">© {new Date().getFullYear()} {DEV_NAME} • DESIGNED FOR THE FUTURE</p>
           <div className="flex space-x-10 mt-6 md:mt-0">
-             {['Twitter', 'Instagram', 'Dribbble'].map(s => (
-               <a key={s} href="#" className="text-[10px] font-black uppercase tracking-widest hover:text-white transition-colors">{s}</a>
-             ))}
+            {['Twitter', 'Instagram', 'Dribbble'].map(s => (
+              <a key={s} href="#" className="text-[10px] font-black uppercase tracking-widest hover:text-white transition-colors">{s}</a>
+            ))}
           </div>
         </div>
       </div>

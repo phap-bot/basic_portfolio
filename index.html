@@ -29,7 +29,7 @@
     }
 
     * {
-      cursor: none !important;
+      cursor: auto;
     }
 
     body {
@@ -95,28 +95,6 @@
       transform: translateY(0);
     }
 
-    #cursor {
-      width: 20px;
-      height: 20px;
-      background: var(--primary);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-      mix-blend-mode: difference;
-      transition: transform 0.1s;
-    }
-
-    #cursor-blur {
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(0, 242, 255, 0.15) 0%, transparent 70%);
-      position: fixed;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-    }
-
     @keyframes glitch {
       0% {
         transform: translate(0);
@@ -172,21 +150,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
 
 <body class="text-slate-100 selection:bg-cyan-500/30">
-  <div id="cursor"></div>
-  <div id="cursor-blur"></div>
   <div class="fixed inset-0 grid-bg pointer-events-none z-0"></div>
   <div id="root"></div>
 
   <script>
-    const cursor = document.getElementById('cursor');
-    const blur = document.getElementById('cursor-blur');
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-      blur.style.left = e.clientX + 'px';
-      blur.style.top = e.clientY + 'px';
-    });
-
     const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

@@ -39,13 +39,17 @@ export const PROJECTS: Project[] = [
 
 export const SKILLS: Skill[] = [
   { name: "Python", level: 90, category: "AI" },
+  { name: "AI Modeling", level: 85, category: "AI" },
   { name: "SQL & Database", level: 85, category: "Backend" },
+  { name: "MongoDB", level: 80, category: "Backend" },
   { name: "Web Development", level: 88, category: "Frontend" },
-  { name: "API Development", level: 82, category: "Backend" },
+  { name: "HTML5 & CSS3", level: 95, category: "Frontend" },
+  { name: "Tailwind CSS", level: 92, category: "Frontend" },
   { name: "React.js", level: 80, category: "Frontend" },
-  { name: "AI/ML Basics", level: 75, category: "AI" },
+  { name: "API Development", level: 82, category: "Backend" },
   { name: "Data Analysis", level: 80, category: "AI" },
-  { name: "Git / Docker", level: 70, category: "Tools" }
+  { name: "Git / Docker", level: 70, category: "Tools" },
+  { name: "Deployment", level: 75, category: "Tools" }
 ];
 
 export const EXPERIENCES: Experience[] = [

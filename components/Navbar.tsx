@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 
 const Navbar: React.FC = () => {
@@ -27,10 +28,9 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Me', href: '#about', id: 'about' },
+    { name: 'Home', href: '#about', id: 'about' },
     { name: 'Stack', href: '#skills', id: 'skills' },
-    { name: 'Works', href: '#projects', id: 'projects' },
-    { name: 'Journey', href: '#experience', id: 'experience' },
+    { name: 'Projects', href: '#projects', id: 'projects' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
@@ -40,37 +40,43 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`fixed top-6 left-1/2 -translate-x-1/2 w-[95%] md:w-max z-50 transition-all duration-500 rounded-full px-8 py-3 flex items-center gap-12 ${
-      isScrolled ? 'bg-slate-900/80 backdrop-blur-xl border border-white/10 shadow-2xl py-3 scale-[0.98]' : 'bg-transparent py-5 scale-100'
-    }`}>
-      <a 
-        href="#about" 
-        onClick={scrollToTop}
-        className="text-xl font-extrabold tracking-tighter heading-font group flex items-center gap-2"
-      >
-        PHÁP<span className="text-cyan-400 group-hover:text-lime-400 transition-colors">.</span>DEV
-      </a>
-      
-      <div className="hidden md:flex items-center space-x-10">
-        {navLinks.map((link) => (
-          <a 
-            key={link.name} 
-            href={link.href} 
-            className={`relative text-[10px] font-black uppercase tracking-[0.2em] transition-all hover:text-white ${
-              activeSection === link.id ? 'text-cyan-400' : 'text-slate-400'
-            }`}
-          >
-            {link.name}
-            {activeSection === link.id && (
-              <span className="absolute -bottom-1 left-0 w-full h-px bg-cyan-400 animate-in fade-in slide-in-from-left-2 duration-500"></span>
-            )}
-          </a>
-        ))}
-      </div>
+    <nav className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${isScrolled ? 'w-[90%] md:w-auto' : 'w-[95%] md:w-auto'
+      }`}>
+      <div className={`mx-auto rounded-full px-6 py-3 flex items-center justify-between gap-8 transition-all duration-500 ${isScrolled
+        ? 'bg-slate-900/80 backdrop-blur-xl border border-white/10 shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] hover:scale-[1.01]'
+        : 'bg-transparent border border-transparent shadow-none'
+        }`}>
 
-      <div className="flex items-center gap-4 border-l border-white/10 pl-8">
-         <div className="w-2 h-2 rounded-full bg-lime-400 animate-pulse"></div>
-         <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 hidden sm:inline">ONLINE</span>
+        <a
+          href="#about"
+          onClick={scrollToTop}
+          className="text-lg font-bold tracking-tight text-slate-100 flex items-center gap-1 group"
+        >
+          PHÁP<span className="text-sky-400">.</span>DEV
+        </a>
+
+        <div className="hidden md:flex items-center space-x-1 bg-slate-800/50 rounded-full p-1 border border-slate-700/30 backdrop-blur-sm">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${activeSection === link.id
+                ? 'bg-slate-700 text-white shadow-sm'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/50'
+                }`}
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-3 pl-4 md:border-l md:border-slate-700/50 text-xs font-medium text-slate-400">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span className="hidden sm:inline">Available for work</span>
+        </div>
       </div>
     </nav>
   );
