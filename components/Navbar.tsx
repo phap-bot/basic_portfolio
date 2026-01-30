@@ -1,4 +1,5 @@
 
+import { dns } from "../icon";
 import React, { useState, useEffect } from 'react';
 
 const Navbar: React.FC = () => {
@@ -49,7 +50,7 @@ const Navbar: React.FC = () => {
         onClick={scrollToTop}
         className="text-xl font-extrabold tracking-tighter heading-font group flex items-center gap-2"
       >
-        <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 group-hover:scale-125 transition-transform shadow-[0_0_10px_rgba(6,182,212,0.8)]"></div>
+        <img src={dns} alt="logo" className="w-6 h-6 object-contain group-hover:scale-125 transition-transform shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
         PHÁP<span className="text-cyan-400 group-hover:text-lime-400 transition-colors">.</span>DEV
       </a>
       

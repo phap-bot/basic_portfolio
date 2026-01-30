@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta name="facebook-domain-verification" content="gfvk8szjadu64n0zkz9brwb1ekenlu" />
   <meta charset="UTF-8">
@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <style>
     :root {
       --primary: #00f2ff;
@@ -18,25 +21,30 @@
       --accent: #adff00;
       --bg: #020617;
     }
-    
+
     html {
       scroll-behavior: smooth;
       /* Tạo khoảng cách phía trên cho mọi section khi trỏ tới */
       scroll-padding-top: 100px;
     }
 
-    * { cursor: none !important; }
+    * {
+      cursor: none !important;
+    }
 
-    body { 
-      font-family: 'Plus Jakarta Sans', sans-serif; 
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--bg);
       overflow-x: hidden;
     }
-    .heading-font { font-family: 'Space Grotesk', sans-serif; }
-    
+
+    .heading-font {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
     .grid-bg {
-      background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
       background-size: 40px 40px;
       mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, #000 30%, transparent 100%);
     }
@@ -50,9 +58,17 @@
     }
 
     @keyframes gradient-shift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .glass-card {
@@ -65,7 +81,7 @@
     .glass-card:hover {
       border-color: rgba(0, 242, 255, 0.4);
       transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0, 242, 255, 0.1);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 242, 255, 0.1);
     }
 
     .reveal {
@@ -73,13 +89,15 @@
       transform: translateY(30px);
       transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     }
+
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
 
     #cursor {
-      width: 20px; height: 20px;
+      width: 20px;
+      height: 20px;
       background: var(--primary);
       border-radius: 50%;
       position: fixed;
@@ -88,8 +106,10 @@
       mix-blend-mode: difference;
       transition: transform 0.1s;
     }
+
     #cursor-blur {
-      width: 300px; height: 300px;
+      width: 300px;
+      height: 300px;
       background: radial-gradient(circle, rgba(0, 242, 255, 0.15) 0%, transparent 70%);
       position: fixed;
       pointer-events: none;
@@ -98,19 +118,45 @@
     }
 
     @keyframes glitch {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(-2px, -2px); }
-      60% { transform: translate(2px, 2px); }
-      80% { transform: translate(2px, -2px); }
-      100% { transform: translate(0); }
-    }
-    .hover-glitch:hover { animation: glitch 0.3s linear infinite; }
+      0% {
+        transform: translate(0);
+      }
 
-    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--secondary); border-radius: 10px; }
+      20% {
+        transform: translate(-2px, 2px);
+      }
+
+      40% {
+        transform: translate(-2px, -2px);
+      }
+
+      60% {
+        transform: translate(2px, 2px);
+      }
+
+      80% {
+        transform: translate(2px, -2px);
+      }
+
+      100% {
+        transform: translate(0);
+      }
+    }
+
+    .hover-glitch:hover {
+      animation: glitch 0.3s linear infinite;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: var(--secondary);
+      border-radius: 10px;
+    }
   </style>
-<script type="importmap">
+  <script type="importmap">
 {
   "imports": {
     "react/": "https://esm.sh/react@^19.2.3/",
@@ -120,8 +166,11 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
-</head>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32.png?v=3" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_32.png?v=3" />
+  <link rel="shortcut icon" href="/favicon.ico?v=3" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png?v=3" />
+
 <body class="text-slate-100 selection:bg-cyan-500/30">
   <div id="cursor"></div>
   <div id="cursor-blur"></div>
@@ -154,6 +203,7 @@
       });
     }, 1000);
   </script>
-<script type="module" src="/index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
